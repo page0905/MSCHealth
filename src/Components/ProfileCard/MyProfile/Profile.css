@@ -1,0 +1,123 @@
+.center-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  max-width: 420px;
+  margin: 100px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2,
+.profile-container h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.profile-info label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.profile-info input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+.profile-info span {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #444;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.profile-buttons button {
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: var(--color-blue-light);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.profile-buttons button:hover {
+  background-color: var(--color-blue-light);
+  color: var(--color-primary);
+}
+
+hr {
+  margin: 30px 0;
+  border-color: #eee;
+}
+
+.profile-appointments table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.profile-appointments th,
+.profile-appointments td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-appointments th {
+  background-color: #f7f7f7;
+  color: #555;
+}
+
+.profile-appointments tr:hover {
+  background-color: #f1f1f1;
+}
+
+.loading {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    width: 350px;
+    height: 300px;
+  }
+  .profile-container h2,
+  .profile-container h3 {
+    font-size: 1.75rem;
+  }
+
+  .profile-info {
+    font-size: 0.9rem;
+  }
+
+  .profile-info span {
+    font-size: 0.8rem;
+  }
+}

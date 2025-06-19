@@ -1,0 +1,126 @@
+.selfcheckup-wrapper {
+  min-height: 100vh;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 9;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selfcheckup-card {
+  width: 100%;
+  margin-top: 100px;
+  max-width: 700px;
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  color: var(--color-text, #444);
+}
+
+.selfcheckup-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.selfcheckup-question {
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.selfcheckup-result {
+  background-color: #fff3f3;
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+  font-style: italic;
+}
+
+.selfcheckup-card .selfcheckup-btn {
+  background-color: var(--color-secondary);
+  border: none !important;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.selfcheckup-card .selfcheckup-btn:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.selfcheckup-card .result-btn {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+}
+
+.selfcheckup-card .result-btn:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .selfcheckup-wrapper {
+    margin-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+  }
+
+  .selfcheckup-card {
+    margin-bottom: 20px;
+  }
+
+  .selfcheckup-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .selfcheckup-card .selfcheckup-btn,
+  .selfcheckup-card .result-btn {
+    width: 50%;
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+
+  .selfcheckup-question {
+    font-size: 0.95rem;
+  }
+
+  .form-check {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .form-check-inline {
+    margin-right: 20px;
+  }
+
+  .selfcheckup-card .form-control,
+  .selfcheckup-card .form-select,
+  .selfcheckup-card .form-label {
+    font-size: 0.9rem;
+  }
+
+  .selfcheckup-card .form-check-label {
+    font-size: 0.8rem;
+  }
+}

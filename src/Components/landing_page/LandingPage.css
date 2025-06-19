@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  height: 100%;
+  padding: 10rem 2rem 5rem 2rem;
+  background-color: var(--color-background);
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .flex-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-section .flex-hero h1 {
+  font-size: 65px;
+  font-weight: 900;
+  color: var(--color-text);
+  animation: fadeInUp 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-accent) 50%,
+    var(--color-background) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section h4 {
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 10%;
+  color: var(--color-text);
+  line-height: 1.5;
+  animation: fadeInUp 1.3s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  animation: fadeInZoom 1.6s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.hero-section .button {
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  width: fit-content;
+  min-width: 150px;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(0.98);
+  background-color: var(--color-secondary);
+}
+
+.hero-section .blob-cont {
+  animation: fadeInZoom 1.8s ease-in-out;
+  animation-fill-mode: both;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 991px) {
+  .hero-section .flex-hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-section h4 {
+    font-size: 18px;
+    padding: 0 8%;
+  }
+
+  .hero-section .button {
+    font-size: 16px;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-section {
+    padding-top: 8rem;
+  }
+
+  .hero-section .flex-hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-section h4 {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+
+  .hero-section .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,226 @@
+.review-form-container {
+  width: 60%;
+  margin: auto;
+  padding-top: 120px;
+  text-align: center;
+  color: var(--color-text);
+  animation: fadeIn 0.6s ease;
+}
+
+.review-form-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.review-form-container table,
+.review-form-container th,
+.review-form-container td,
+.review-form-container tr {
+  border: 1px solid var(--color-blue-light);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--color-blue-light);
+  color: var(--color-primary);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Feedback Button */
+.feedback-btn,
+.edit-btn {
+  background-color: var(--color-primary);
+  color: var(--color-blue-light);
+  border: none;
+  min-width: 100px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  transition: all 0.3s ease;
+}
+
+.feedback-btn:hover,
+.edit-btn:hover {
+  background-color: var(--color-blue-light);
+  color: var(--color-primary);
+}
+
+/* Feedback Content */
+.feedback-content {
+  color: var(--color-text);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.95rem;
+  white-space: pre-line;
+}
+
+/* Modal */
+.modal-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.feedback-modal {
+  background: white;
+  padding: 32px 24px;
+  max-width: 90vw;
+  max-height: 90vh;
+
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+}
+
+/* Modal Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.feedback-modal .button-container {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  animation: none;
+}
+
+.feedback-modal button:first-of-type {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.feedback-modal button:last-of-type {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.feedback-modal button:first-of-type:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.feedback-modal button:last-of-type:hover {
+  background-color: var(--color-rose);
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.rating-stars span {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.star {
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s ease-in-out;
+}
+
+.star.selected {
+  color: var(--color-rose);
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  height: 90px;
+  margin-top: 12px;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/* Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes starShine {
+  0% {
+    text-shadow: 0 0 5px var(--color-rose);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--color-rose);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--color-rose);
+  }
+}
+
+.star:hover {
+  color: var(--color-rose);
+  transform: scale(1.2);
+  text-shadow: 0 0 8px var(--color-rose);
+}
+
+.star.selected {
+  color: var(--color-rose);
+  animation: starShine 1s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .review-form-container {
+    width: 90%;
+    padding-top: 80px;
+    overflow-x: auto;
+  }
+
+  .review-form-container h2 {
+    font-size: 1.75rem;
+  }
+  table {
+    font-size: 0.75rem;
+  }
+  .feedback-modal {
+    width: 95%;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,53 @@
+.pt-navbar {
+  padding-top: 120px;
+}
+
+.pt-navbar .text-center {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.healthtip-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fffdfc;
+  border: none;
+}
+
+.healthtip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.healthtip-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #627e95;
+}
+
+.healthtip-card .card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.healthtip-card .card-footer a {
+  font-size: 0.85rem;
+  color: #c57b9a;
+  text-decoration: none;
+}
+
+.healthtip-card .card-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .healthtip-card .card-title {
+    font-size: 1rem;
+  }
+
+  .healthtip-card .card-text {
+    font-size: 0.85rem;
+  }
+}

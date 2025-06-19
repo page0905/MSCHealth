@@ -1,0 +1,314 @@
+{
+  "users": [
+    {
+      "id": "8e73",
+      "role": "admin",
+      "name": "admin",
+      "phone": "0123456789",
+      "email": "qthaotrang0905@gmail.com",
+      "password": "123123"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "2e02209d-c7e1-4919-aa01-2b68bffb2a44",
+      "doctorName": "Dr. Jessica White",
+      "doctorSpeciality": "Dentist",
+      "name": "admin",
+      "phoneNumber": "0123123123",
+      "email": "qthaotrang0905@gmail.com",
+      "type": "instant",
+      "timeSlot": "2025-06-18T16:36:08.782Z",
+      "status": "completed"
+    },
+    {
+      "id": "3ef6ed54-2d73-47b2-b887-de2c9a55c832",
+      "doctorName": "Dr. Patrick Wong",
+      "doctorSpeciality": "Bone",
+      "name": "admin",
+      "phoneNumber": "0766687246",
+      "email": "qthaotrang0905@gmail.com",
+      "type": "normal",
+      "timeSlot": "2025-06-19T04:40:07.133Z",
+      "status": "completed",
+      "date": "2025-06-19",
+      "selectedSlot": "08:00 AM - 09:00 AM"
+    },
+    {
+      "id": "5d74346b-de23-48d9-b7c3-c1583104bf4f",
+      "doctorName": "Dr. Kevin Miller",
+      "doctorSpeciality": "Dentist",
+      "name": "admin",
+      "phoneNumber": "0123123123",
+      "email": "qthaotrang0905@gmail.com",
+      "type": "instant",
+      "timeSlot": "2025-06-19T04:40:24.871Z",
+      "status": "booked"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "appointmentId": "495b990f-4620-495d-bb31-1f062dccf393",
+      "doctorName": "Dr. Stephny Grosh",
+      "speciality": "Dentist",
+      "feedback": "Very professional!",
+      "rating": 5
+    },
+    {
+      "id": "a7c6",
+      "appointmentId": "1adf166c-3a64-4608-ba46-8e7567c8a393",
+      "doctorName": "Dr. Mark D. Okusa",
+      "speciality": "General Physician",
+      "feedback": "good",
+      "rating": 4
+    }
+  ],
+  "doctors": [
+    {
+      "name": "Dr. Sarah Johnson",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 9,
+      "speciality": "Dentist",
+      "id": "6a44",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Jessica White",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 18,
+      "speciality": "Dentist",
+      "id": "2e28",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. David Anderson",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 24,
+      "speciality": "Dentist",
+      "id": "6305",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Kevin Miller",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Dentist",
+      "id": "5678",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Patrick Wong",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Bone",
+      "id": "c661",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Robert Johnson",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Bone",
+      "id": "7d30",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Richard Pearson",
+      "ratings": "⭐⭐⭐",
+      "experience": 40,
+      "speciality": "General Physician",
+      "id": "87c6",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Michael Smith",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 40,
+      "speciality": "General Physician",
+      "id": "485b",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Laura Taylor",
+      "ratings": "⭐⭐⭐",
+      "experience": 3,
+      "speciality": "General Physician",
+      "id": "1357",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Mark D. Okusa",
+      "ratings": "⭐⭐⭐",
+      "experience": 3,
+      "speciality": "General Physician",
+      "id": "bc69",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Elizabeth Clark",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "f871",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Samantha Turner",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 40,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "f77d",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Rachel Parker",
+      "ratings": "⭐⭐⭐",
+      "experience": 33,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "0573",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Eugene J. Turner",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 40,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "5452",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Jiao Yang",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 9,
+      "speciality": "Dentist",
+      "id": "9a1a",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Denis Raj",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 24,
+      "speciality": "Dentist",
+      "id": "d41a",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Lyn Christie",
+      "ratings": "⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Dentist",
+      "id": "36b4",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Stephny Grosh",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 18,
+      "speciality": "Dentist",
+      "id": "8574",
+      "type": "normal"
+    },
+    {
+      "name": "Dr. Alan Dalkin",
+      "ratings": "⭐⭐⭐⭐",
+      "experience": 33,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "728c",
+      "type": "instant"
+    },
+    {
+      "name": "Dr. Emily Clark",
+      "ratings": "⭐⭐⭐⭐⭐",
+      "experience": 11,
+      "speciality": "Gynecologist/Obstetrician",
+      "id": "6541",
+      "type": "normal"
+    }
+  ],
+  "healthtips": [
+    {
+      "title": "Stay Hydrated",
+      "content": "Drink at least 8 glasses of water every day to maintain body function.",
+      "source": "https://www.healthline.com/nutrition/how-much-water-should-you-drink-per-day",
+      "id": "1a82"
+    },
+    {
+      "title": "Regular Exercise",
+      "content": "Try to do at least 30 minutes of moderate exercise most days of the week.",
+      "source": "https://www.cdc.gov/physicalactivity/basics/index.htm",
+      "id": "e32d"
+    },
+    {
+      "title": "Eat More Veggies",
+      "content": "Incorporate more vegetables and fruits into your meals for better health.",
+      "source": "",
+      "id": "a477"
+    }
+  ],
+  "healthblogs": [
+    {
+      "id": "1",
+      "title": "5 Ways to Boost Your Immunity During Rainy Season",
+      "summary": "Stay healthy during wet weather with these 5 simple tips.",
+      "content": "<p>Eat a balanced diet, stay warm, do light exercises, sleep well, and drink enough water.</p>",
+      "thumbnail": "5-ways-boost-immunity.jpg",
+      "date": "2025-06-01",
+      "author": "Dr. An"
+    },
+    {
+      "id": "2",
+      "title": "Best Foods to Eat When You Have a Cold",
+      "summary": "Recover faster with these immune-boosting foods.",
+      "content": "<p>Oranges, ginger, garlic, and hot soups can help reduce cold symptoms and strengthen immunity.</p>",
+      "thumbnail": "eat-when-cold.jpg",
+      "date": "2025-06-05",
+      "author": "Dr. Binh"
+    },
+    {
+      "id": "3",
+      "title": "Easy Home Workouts for Busy People",
+      "summary": "10 simple exercises you can do right at your desk.",
+      "content": "<p>Neck stretches, shoulder rolls, light squats, 30-second planks, and regular stretching every 2 hours.</p>",
+      "thumbnail": "easy-home-workouts.jpg",
+      "date": "2025-06-08",
+      "author": "Coach Linh"
+    },
+    {
+      "id": "4",
+      "title": "How to Sleep Better: 7 Habits That Actually Work",
+      "summary": "Struggling with sleep? These science-backed tips might help.",
+      "content": "<p>Stick to a schedule, avoid screens before bed, and try relaxation techniques like deep breathing.</p>",
+      "thumbnail": "how-to-sleep.jpg",
+      "date": "2025-06-10",
+      "author": "Dr. Trang"
+    },
+    {
+      "id": "5",
+      "title": "Signs of High Blood Pressure You Shouldn't Ignore",
+      "summary": "High blood pressure often goes unnoticed—until it's too late.",
+      "content": "<p>Watch out for frequent headaches, dizziness, and blurry vision. Regular checkups are crucial.</p>",
+      "thumbnail": "blood-pressure.jpg",
+      "date": "2025-06-12",
+      "author": "Dr. Minh"
+    },
+    {
+      "id": "6",
+      "title": "10 Mental Health Tips for Exam Season",
+      "summary": "Manage anxiety and stress during finals with these expert-backed tips.",
+      "content": "<p>Take breaks, eat well, avoid cramming, and get enough sleep. Talk to someone if you feel overwhelmed.</p>",
+      "thumbnail": "exam-for-health.jpg",
+      "date": "2025-06-14",
+      "author": "Dr. Thao"
+    },
+    {
+      "id": "7",
+      "title": "How to Stay Hydrated in Hot Weather",
+      "summary": "Dehydration can creep up quickly—here's how to stay safe.",
+      "content": "<p>Drink small amounts of water regularly, avoid alcohol, and eat water-rich fruits like watermelon and cucumber.</p>",
+      "thumbnail": "stay-in-hot-weather.jpg",
+      "date": "2025-06-16",
+      "author": "Dr. Son"
+    }
+  ]
+}

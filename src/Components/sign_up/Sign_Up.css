@@ -1,0 +1,118 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-background);
+  animation: fadeInSlide 0.8s ease-in-out;
+}
+
+.container-s {
+  width: 280px;
+  margin: 5% auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInZoom 0.8s ease-in-out;
+}
+
+.signup-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.signup-text,
+.signup-text1 {
+  text-align: center;
+  width: 100%;
+}
+
+.signup-text1 a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.signup-text1 a:hover {
+  text-decoration: underline;
+}
+
+.signup-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signup-form form {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select.form-control {
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='30,50 70,90 110,50' stroke='%23627e95' stroke-width='15' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  background-size: 14px;
+  padding-right: 36px;
+  background-color: white;
+}
+
+.signup-form .btn-group {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-form .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-blue-light);
+}
+
+.signup-form .btn-primary:hover {
+  background-color: var(--color-blue-light);
+  color: var(--color-primary);
+}
+/* Animation Keyframes */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
