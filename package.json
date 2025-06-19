@@ -2,13 +2,16 @@
   "name": "mschealth",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://page0905.github.io/MSCHealth",
   "description": "A React-based medical booking platform with JSON Server as backend.",
   "scripts": {
     "start": "react-scripts start",
     "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
@@ -34,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
