@@ -5,22 +5,22 @@ const Service = () => {
   const services = [
     {
       title: "Instant Consultation",
-      img: "/asset/image/service/instant_consultation.jpg",
+      img: "asset/image/service/instant_consultation.jpg",
       link: "/instant-consultation",
     },
     {
       title: "Book an Appointment",
-      img: "/asset/image/service/book_appointment.jpg",
+      img: "asset/image/service/book_appointment.jpg",
       link: "/appointment",
     },
     {
       title: "Self Checkup",
-      img: "/asset/image/service/self_check.jpg",
+      img: "asset/image/service/self_check.jpg",
       link: "/self-checkup",
     },
     {
       title: "Health Tips and Guidance",
-      img: "/asset/image/service/tips.jpg",
+      img: "asset/image/service/tips.jpg",
       link: "/health-tips",
     },
   ];

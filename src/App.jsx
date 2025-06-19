@@ -19,7 +19,7 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App d-flex flex-column min-vh-100">
-      <BrowserRouter>
+      <BrowserRouter basename="/MSCHealth">
         <Navbar />
         <Notification />
 

@@ -25,7 +25,7 @@ const HealthBlogDetail = () => {
         By {blog.author} - {blog.date}
       </p>
       <img
-        src={`/asset/image/healthBlog/${blog.thumbnail}`}
+        src={`asset/image/healthBlog/${blog.thumbnail}`}
         alt={blog.title}
         className="img-fluid rounded mb-4 detail-image"
       />

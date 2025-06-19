@@ -41,7 +41,10 @@ const Navbar = () => {
     >
       <Link to="/" className="logo d-flex align-items-center">
         <span>MSCHealth</span>
-        <img src="/asset/image/logo.png" alt="logo" />
+        <img
+          src={`${process.env.PUBLIC_URL}/asset/image/logo.png`}
+          alt="logo"
+        />
       </Link>
 
       <div

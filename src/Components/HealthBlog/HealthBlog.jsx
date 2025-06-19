@@ -42,7 +42,7 @@ const HealthBlog = () => {
             <Card className="blog-card-container">
               <div className="blog-card-thumbnail">
                 <img
-                  src={`/asset/image/healthBlog/${blog.thumbnail}`}
+                  src={`asset/image/healthBlog/${blog.thumbnail}`}
                   alt={blog.title}
                 />
               </div>
