@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MSCHealth/static/css/main.c41c38cf.css",
-    "main.js": "/MSCHealth/static/js/main.01130d53.js",
+    "main.js": "/MSCHealth/static/js/main.54d6de35.js",
     "index.html": "/MSCHealth/index.html",
     "main.c41c38cf.css.map": "/MSCHealth/static/css/main.c41c38cf.css.map",
-    "main.01130d53.js.map": "/MSCHealth/static/js/main.01130d53.js.map"
+    "main.54d6de35.js.map": "/MSCHealth/static/js/main.54d6de35.js.map"
   },
   "entrypoints": [
     "static/css/main.c41c38cf.css",
-    "static/js/main.01130d53.js"
+    "static/js/main.54d6de35.js"
   ]
 }
