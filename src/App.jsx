@@ -19,7 +19,7 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App d-flex flex-column min-vh-100">
-      <BrowserRouter basename="/MSCHealth">
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navbar />
         <Notification />
 

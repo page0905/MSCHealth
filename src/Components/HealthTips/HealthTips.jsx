@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container, Row, Col, Spinner } from "react-bootstrap";
+import { Card, Container, Row, Col, Spinner, Alert } from "react-bootstrap";
 import "./HealthTips.css";
 
 const HealthTips = () => {
   const [tips, setTips] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3001/healthtips")
-      .then((res) => res.json())
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/healthtips`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch health tips.");
+        return res.json();
+      })
       .then((data) => {
         setTips(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Could not load health tips. Please try again later.");
         setLoading(false);
       });
   }, []);
@@ -22,8 +31,15 @@ const HealthTips = () => {
       </div>
     );
 
+  if (error)
+    return (
+      <div className="text-center py-5">
+        <Alert variant="danger">{error}</Alert>
+      </div>
+    );
+
   return (
-    <Container className=" pt-navbar">
+    <Container className="pt-navbar">
       <h2 className="text-center mb-4">Health Tips & Guide</h2>
       <Row>
         {tips.map((tip, index) => (

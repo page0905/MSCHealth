@@ -7,7 +7,7 @@ const UserDropdown = () => {
 
   const handleLogout = () => {
     sessionStorage.clear();
-    window.location.href = "/"; // hoặc dùng navigate nếu dùng React Router
+    window.location.href = "/";
   };
 
   return (

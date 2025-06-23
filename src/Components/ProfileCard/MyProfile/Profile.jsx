@@ -5,7 +5,7 @@ import "./Profile.css";
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [editing, setEditing] = useState(false);
-  const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const email = sessionStorage.getItem("email");
@@ -16,11 +16,18 @@ const Profile = () => {
       return;
     }
 
-    fetch("http://localhost:3001/users")
+    setLoading(true);
+
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/users`)
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((u) => u.email === email);
         if (found) setUser(found);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
       });
   }, [email, navigate]);
 
@@ -29,7 +36,7 @@ const Profile = () => {
   };
 
   const saveChanges = () => {
-    fetch(`http://localhost:3001/users/${user.id}`, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
@@ -41,7 +48,7 @@ const Profile = () => {
       .catch((err) => console.error(err));
   };
 
-  if (!user) return <p className="loading">Loading...</p>;
+  if (loading || !user) return <p className="loading">Loading...</p>;
 
   return (
     <div className="center-wrapper">

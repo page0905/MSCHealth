@@ -129,7 +129,10 @@ const SelfCheckup = () => {
                   some quick health tips"
                 </p>
                 <div className="text-center">
-                  <Button className="result-btn" href="/health-tips">
+                  <Button
+                    className="result-btn"
+                    href={`${process.env.PUBLIC_URL}/health-tips`}
+                  >
                     View Health Tips
                   </Button>
                 </div>
@@ -138,7 +141,10 @@ const SelfCheckup = () => {
 
             {(result === "high" || result === "medium") && (
               <div className="text-center">
-                <Button className="result-btn" href="/instant-consultation">
+                <Button
+                  className="result-btn"
+                  href={`${process.env.PUBLIC_URL}/instant-consultation`}
+                >
                   Book an Appointment
                 </Button>
               </div>

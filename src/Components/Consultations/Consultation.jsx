@@ -12,6 +12,8 @@ const Consultation = ({
   const [doctors, setDoctors] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [loadingDoctors, setLoadingDoctors] = useState(true);
+  const [loadingSearch, setLoadingSearch] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +23,9 @@ const Consultation = ({
       return;
     }
 
-    fetch("http://localhost:3001/doctors")
+    setLoadingDoctors(true);
+
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/doctors`)
       .then((res) => res.json())
       .then((data) => {
         const typeFilter = isInstant ? "instant" : "normal";
@@ -42,7 +46,8 @@ const Consultation = ({
           setFilteredDoctors(filteredByType);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error("Error fetching doctors:", err))
+      .finally(() => setLoadingDoctors(false));
   }, [searchParams, navigate, isInstant]);
 
   const handleSearch = ({ searchText, selectedSpeciality, selectedRating }) => {
@@ -73,7 +78,12 @@ const Consultation = ({
 
   return (
     <div className="container-fluid py-4 custom-padding-mobile">
-      <SearchComponent isInstant={isInstant} onSearch={handleSearch} />
+      <SearchComponent
+        isInstant={isInstant}
+        onSearch={handleSearch}
+        setSearchLoading={setLoadingSearch}
+      />
+
       <div className="text-center">
         <h2>{filteredDoctors.length} doctors available</h2>
         <h5 className="text-muted">
@@ -81,11 +91,15 @@ const Consultation = ({
         </h5>
       </div>
 
-      {filteredDoctors.length > 0 ? (
+      {loadingDoctors || loadingSearch ? (
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      ) : filteredDoctors.length > 0 ? (
         <div className="row">
           {filteredDoctors.map((doctor) => (
             <div
-              className="col-6 col-sm-4 col-md-3 mb-4 "
+              className="col-6 col-sm-4 col-md-3 mb-4"
               key={doctor.id || doctor.name}
             >
               <DoctorCardComponent

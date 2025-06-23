@@ -4,7 +4,9 @@ const AppointmentStatusUpdater = () => {
   useEffect(() => {
     const updateAppointments = async () => {
       try {
-        const res = await fetch("http://localhost:3001/appointments");
+        const res = await fetch(
+          `${process.env.REACT_APP_API_BASE_URL}/appointments`
+        );
         const data = await res.json();
         const now = new Date();
 
@@ -14,11 +16,14 @@ const AppointmentStatusUpdater = () => {
           if (appt.type === "instant") {
             if (!appt.timeSlot) {
               const timeSlot = new Date().toISOString();
-              await fetch(`http://localhost:3001/appointments/${appt.id}`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ timeSlot }),
-              });
+              await fetch(
+                `${process.env.REACT_APP_API_BASE_URL}/appointments/${appt.id}`,
+                {
+                  method: "PATCH",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ timeSlot }),
+                }
+              );
               return;
             }
             apptTime = new Date(appt.timeSlot);
@@ -35,11 +40,14 @@ const AppointmentStatusUpdater = () => {
             now - apptTime > 30 * 60 * 1000 &&
             appt.status !== "completed"
           ) {
-            await fetch(`http://localhost:3001/appointments/${appt.id}`, {
-              method: "PATCH",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ status: "completed" }),
-            });
+            await fetch(
+              `${process.env.REACT_APP_API_BASE_URL}/appointments/${appt.id}`,
+              {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: "completed" }),
+              }
+            );
           }
         });
       } catch (error) {

@@ -37,7 +37,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3001/users?email=${email}&password=${password}`
+        `${process.env.REACT_APP_API_BASE_URL}/users?email=${email}&password=${password}`
       );
       const users = await response.json();
 

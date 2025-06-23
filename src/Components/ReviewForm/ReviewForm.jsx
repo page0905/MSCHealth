@@ -10,6 +10,7 @@ const ReviewForm = () => {
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState(0);
   const [editingReviewId, setEditingReviewId] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -23,15 +24,26 @@ const ReviewForm = () => {
     const email = sessionStorage.getItem("email");
     setUserEmail(email);
 
-    fetch("http://localhost:3001/appointments")
-      .then((res) => res.json())
-      .then((data) => setAppointments(data))
-      .catch((err) => console.error(err));
+    const fetchData = async () => {
+      try {
+        const [appointmentsRes, reviewsRes] = await Promise.all([
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/appointments`),
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/reviews`),
+        ]);
 
-    fetch("http://localhost:3001/reviews")
-      .then((res) => res.json())
-      .then(setReviews)
-      .catch((err) => console.error(err));
+        const appointmentsData = await appointmentsRes.json();
+        const reviewsData = await reviewsRes.json();
+
+        setAppointments(appointmentsData);
+        setReviews(reviewsData);
+      } catch (err) {
+        console.error("Error fetching review data:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [navigate]);
 
   const handleFeedbackClick = (appt, existingReview = null) => {
@@ -61,8 +73,8 @@ const ReviewForm = () => {
     };
 
     const url = editingReviewId
-      ? `http://localhost:3001/reviews/${editingReviewId}`
-      : "http://localhost:3001/reviews";
+      ? `${process.env.REACT_APP_API_BASE_URL}/reviews/${editingReviewId}`
+      : `${process.env.REACT_APP_API_BASE_URL}/reviews`;
 
     fetch(url, {
       method: editingReviewId ? "PATCH" : "POST",
@@ -92,11 +104,37 @@ const ReviewForm = () => {
   );
 
   const formatAppointmentTime = (appt) => {
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    };
+
     if (appt.type === "normal" && appt.date && appt.selectedSlot) {
-      return `${appt.date} ${appt.selectedSlot}`;
+      try {
+        const datePart = new Date(appt.date);
+        const [time, period] = appt.selectedSlot.split(" ");
+        const [hoursStr, minutesStr] = time.split(":");
+        let hours = parseInt(hoursStr);
+        const minutes = parseInt(minutesStr);
+
+        if (period === "PM" && hours !== 12) hours += 12;
+        if (period === "AM" && hours === 12) hours = 0;
+
+        datePart.setHours(hours);
+        datePart.setMinutes(minutes);
+        return datePart.toLocaleString("en-GB", options);
+      } catch (err) {
+        console.error("Error parsing date:", err);
+        return "-";
+      }
     } else if (appt.timeSlot) {
-      return new Date(appt.timeSlot).toLocaleString();
+      return new Date(appt.timeSlot).toLocaleString("en-GB", options);
     }
+
     return "-";
   };
 
@@ -104,7 +142,9 @@ const ReviewForm = () => {
     <div className="review-form-container">
       <h2>Reviews</h2>
 
-      {filteredAppointments.length === 0 ? (
+      {loading ? (
+        <p>Loading...</p>
+      ) : filteredAppointments.length === 0 ? (
         <p className="no-eligible">
           You have no completed appointments to review.
         </p>

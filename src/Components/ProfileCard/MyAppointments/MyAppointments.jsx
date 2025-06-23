@@ -3,14 +3,24 @@ import "./MyAppointments.css";
 
 const MyAppointments = () => {
   const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
   const email = sessionStorage.getItem("email");
 
   useEffect(() => {
-    fetch("http://localhost:3001/appointments")
-      .then((res) => res.json())
+    setLoading(true);
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/appointments`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch appointments.");
+        return res.json();
+      })
       .then((data) => {
         const filtered = data.filter((a) => a.email === email);
         setAppointments(filtered);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch appointments:", err);
+        setLoading(false);
       });
   }, [email]);
 
@@ -18,7 +28,10 @@ const MyAppointments = () => {
     <div className="center-wrapper">
       <div className="appointments-container">
         <h2>My Appointments</h2>
-        {appointments.length === 0 ? (
+
+        {loading ? (
+          <p className="loading">Loading...</p>
+        ) : appointments.length === 0 ? (
           <p>No appointments yet.</p>
         ) : (
           <table>

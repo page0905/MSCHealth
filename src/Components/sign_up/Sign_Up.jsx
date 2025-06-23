@@ -50,7 +50,7 @@ const SignUp = () => {
 
     try {
       const emailCheck = await fetch(
-        `http://localhost:3001/users?email=${formData.email}`
+        `${process.env.REACT_APP_API_BASE_URL}/users?email=${formData.email}`
       );
       const existingUsers = await emailCheck.json();
       if (existingUsers.length > 0) {
@@ -59,11 +59,14 @@ const SignUp = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3001/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/users`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         setServerError("Registration failed. Try again.");

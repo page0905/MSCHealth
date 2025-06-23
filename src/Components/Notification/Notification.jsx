@@ -14,7 +14,9 @@ const Notification = () => {
 
     const fetchAppointments = async () => {
       try {
-        const res = await fetch("http://localhost:3001/appointments");
+        const res = await fetch(
+          `${process.env.REACT_APP_API_BASE_URL}/appointments`
+        );
         const data = await res.json();
 
         const userAppointments = data.filter(

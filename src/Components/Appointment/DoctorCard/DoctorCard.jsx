@@ -37,7 +37,9 @@ const DoctorCard = ({
     if (!storedEmail) return;
 
     const type = isInstant ? "instant" : "normal";
-    const url = `http://localhost:3001/appointments?doctorName=${encodeURIComponent(
+    const url = `${
+      process.env.REACT_APP_API_BASE_URL
+    }/appointments?doctorName=${encodeURIComponent(
       name
     )}&doctorSpeciality=${encodeURIComponent(
       speciality
@@ -79,7 +81,7 @@ const DoctorCard = ({
       newAppointment.selectedSlot = selectedSlot;
     }
 
-    fetch("http://localhost:3001/appointments", {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/appointments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newAppointment),
@@ -97,7 +99,7 @@ const DoctorCard = ({
     if (!window.confirm("Are you sure you want to cancel this appointment?"))
       return;
 
-    fetch(`http://localhost:3001/appointments/${id}`, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/appointments/${id}`, {
       method: "DELETE",
     })
       .then(() => {
