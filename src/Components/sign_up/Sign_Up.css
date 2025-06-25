@@ -85,7 +85,7 @@ select.form-control {
   border-radius: 6px;
 }
 
-.btn-primary {
+.signup-form .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-blue-light);
 }
@@ -93,6 +93,10 @@ select.form-control {
 .signup-form .btn-primary:hover {
   background-color: var(--color-blue-light);
   color: var(--color-primary);
+}
+
+.error-message {
+  color: red;
 }
 /* Animation Keyframes */
 @keyframes fadeInSlide {
