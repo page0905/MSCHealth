@@ -7,6 +7,7 @@ const Notification = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const popupRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const storedEmail = sessionStorage.getItem("email");
@@ -66,8 +67,34 @@ const Notification = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleToggle = () => {
+  const handleToggle = async () => {
     setIsOpen((prev) => !prev);
+
+    if (!isOpen) {
+      const storedEmail = sessionStorage.getItem("email");
+      if (!storedEmail) return;
+
+      setLoading(true);
+
+      try {
+        const res = await fetch(
+          `${process.env.REACT_APP_API_BASE_URL}/appointments`
+        );
+        const data = await res.json();
+
+        const userAppointments = data.filter(
+          (appt) =>
+            appt.email?.toLowerCase() === storedEmail.toLowerCase() &&
+            appt.status !== "completed"
+        );
+
+        setAppointments(userAppointments);
+      } catch (err) {
+        console.error("Error fetching appointments:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
   };
 
   const handleViewAll = () => {
@@ -85,7 +112,9 @@ const Notification = () => {
       {isOpen && (
         <div className="popup-notification">
           <h4>Upcoming Appointments</h4>
-          {appointments.length === 0 ? (
+          {loading ? (
+            <p className="loading-text">Loading...</p>
+          ) : appointments.length === 0 ? (
             <p className="no-appointments">
               You have no upcoming appointments.
             </p>
